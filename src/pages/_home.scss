@@ -1,0 +1,78 @@
+.home {
+  &_top {
+    // min-height: 100vh;
+    //  background-image: url('../../public/assets/intro-home.gif');
+    position: relative;
+    overflow: hidden;
+    video {
+      width: 100vw;
+      &.mobile {
+        display: none;
+      }
+      @media screen and (max-width: 799px) {
+        &.desktop {
+          display: none;
+        }
+        &.mobile {
+          display: initial;
+          min-height: 650px;
+        }
+      }
+    }
+  }
+  &_mid {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    bottom: 6px;
+    a {
+      text-decoration: none;
+      overflow: hidden;
+      //   height:380px;
+    }
+  }
+  &_bottom {
+    background-color: black;
+    padding: 100px 10vw 100px 10vw;
+   
+  
+    .redes {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    &_top {
+      min-height: auto;
+      .arrow {
+        display: none;
+      }
+    }
+    &_mid {
+      grid-template-columns: 1fr;
+    }
+    &_bottom {
+      padding: 70px 20px 30px 20px;
+      .bottom_info{
+        margin:0;
+        .section_title{
+          margin-bottom:60px;
+        }
+        .email_contacto-bt {
+          margin-top: 0;
+        }
+      }
+      .redes {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-top:30px;
+        .redes_sociales {
+          width: 20px;
+          margin: 0 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

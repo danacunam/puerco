@@ -1,0 +1,206 @@
+.brutal {
+  max-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 60px 400px 300px auto;
+  width: 100vw;
+ /*  background-image: url('../../public/assets/brutal/bg-brutal.webp');
+  background-size: cover;
+  background-repeat: no-repeat; */
+  &_background {
+    grid-column: 1/13;
+    width: 100vw;
+    grid-row: 1/5;
+    // transform: rotate(180deg);
+
+    &-mobile {
+      display: none;
+    }
+  }
+  &_gif {
+    grid-column: 8/12;
+    width: 100%;
+    grid-row: 1/5;
+    z-index: 2;
+  }
+  &_logo {
+    height: 400px;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    z-index: 2;
+  }
+  .big_title {
+    z-index: 2;
+    color: white;
+    grid-row: 2/3;
+    align-self: end;
+    grid-column: 3/6;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    margin: 0;
+    line-height: 1.3em;
+    position: relative;
+    animation: fadein 0.5s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  /*   h2{
+      margin-inline-end: 0;
+    }
+ */
+ img{
+  width:100%;
+ }
+  }
+  .locations {
+    z-index: 2;
+    color: white;
+    grid-row: 2/3;
+    align-self: center;
+    grid-column: 5/6;
+    position: relative;
+    top: 3rem;
+    right:0;
+    animation: fadein 0.4s ease forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+    font-size:0.3em;
+    position:absolute;
+  }
+  .brutal_info {
+    z-index: 2;
+    color: white;
+    grid-row: 3/4;
+    align-self: start;
+    grid-column: 4/9;
+    background: rgba(#d9d9d9, 0.06);
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    position: relative;
+    right: 2.5rem;
+    bottom: 1rem;
+    width: 90%;
+    line-height: 1em;
+    animation: fadein 0.4s ease forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    &-desktop {
+      display: block;
+    }
+    &-mobile {
+      display: none;
+    }
+  }
+  .link_to_work {
+    z-index: 4;
+    grid-row: 3/4;
+    align-self: center;
+    grid-column: 4/5;
+    margin-left: 20px;
+
+    // border: 0.5px solid white;
+
+    position: relative;
+    right: 2.5rem;
+    top: 1rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    //  width: 100px;
+    /*  a {
+      color: white;
+      padding: 10px 7px 7px 4px;
+      text-decoration: none;
+      display:flex;
+      align-items: center;
+      line-height: 1em;
+      h5,span {
+        font-size: 1.6em;
+      }
+    } */
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 70px auto;
+    min-height:100vh;
+  //  background-image: url('../../public/assets/brutal/bg-brutal_mob.webp');
+    &_background {
+      display: none;
+      &-mobile {
+        display: block;
+        grid-column: 1/2;
+        grid-row: 1/5;
+        width: 100%;
+      }
+    }
+    &_gif {
+      grid-column: 1/2;
+      width: 75%;
+      justify-self: end;
+      align-self: start;
+      grid-row: 3/5;
+      z-index: 2;
+      top: 0;
+      margin-top: 5px;
+    }
+    .big_title {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      font-size: 1.8rem;
+      align-self: start;
+      justify-self: start;
+      bottom: 0;
+      left: 25vw;
+      img{
+        width:160px;
+      }
+    }
+    .locations {
+      grid-column: 1/2;
+      font-size: 0.7rem;
+      grid-row:2/3;
+      top:9px;
+      left:14px;
+      align-self: start;
+      justify-self: center;
+      font-size:9px;
+    }
+    .brutal_info {
+      grid-column: 1/2;
+      grid-row: 4/5;
+      align-self: start;
+      left: 12px;
+      top:-10px;
+      font-size: 14px;
+      width: 70vw;
+      &-desktop {
+        display: none;
+      }
+      &-mobile {
+        display: block;
+        right: 0;
+      }
+    }
+    &_logo {
+      height: 250px;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      z-index: 2;
+      left: 12px;
+      bottom: 19px;
+    }
+    .link_to_work {
+      grid-column: 1/2;
+      grid-row: 3/5;
+      align-self: start;
+      top: 180px;
+      left: -5px;
+
+      img {
+        width: 70px;
+      }
+    }
+  }
+}

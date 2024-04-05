@@ -1,0 +1,249 @@
+@font-face {
+  font-family: "Telegraf Regular";
+  src: url("../../public/assets/font/Telegraf-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Telegraf Ultralight";
+  src: url("../../public/assets/font/Telegraf-Ultralight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Telegraf Ultrabold";
+  src: url("../../public/assets/font/Telegraf-Ultrabold.otf") format("opentype");
+}
+
+body {
+  font-family: Telegraf Regular;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.bold {
+  font-family: Telegraf Ultrabold;
+}
+
+.light {
+  font-family: Telegraf Ultralight;
+}
+ul {
+  list-style: none;
+}
+
+.arrow {
+  transform: rotate(-90deg);
+  width: 60px;
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+}
+
+.section_title {
+  cursor: pointer;
+  color: white; // prev #141414
+  margin-top: 180px;
+  font-size: 2.6rem;
+  transition: all 0.5s ease;
+  font-family: Telegraf Ultralight;
+
+  /* &:hover {
+    color: white;
+  } */
+  @media screen and (max-width: 800px) {
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+
+.layout {
+  position: relative;
+  box-sizing: border-box;
+  &_fr {
+    left: 100vw;
+    animation: slidefr 0.5s ease forwards;
+  }
+  &_fl {
+    animation: slidefl 0.5s ease forwards;
+    right: 100vw;
+  }
+}
+.slide {
+  position: relative;
+  &_fr {
+    left: 100vw;
+    animation: slidefr 0.8s ease-out forwards;
+  }
+  &_fl {
+    animation: slidefl 0.8s ease-out forwards;
+    right: 100vw;
+  }
+  &_ft {
+    animation: slideft 0.8s ease-out forwards;
+    top: -100vh;
+  }
+  &_flop {
+    animation: slideflop 0.8s ease-out forwards;
+    opacity: 0;
+    right: 100vw;
+  }
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.not-visible {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadein 0.15s ease forwards;
+  &-longer {
+    animation-duration: 0.5s;
+  }
+}
+.fade-out {
+  opacity: 1;
+  animation: fadeout 0.2s ease forwards;
+}
+
+@keyframes slidefr {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes slidefl {
+  0% {
+    right: 100vw;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+@keyframes slideflop {
+  0% {
+    opacity: 0;
+    right: 100vw;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideft {
+  0% {
+    top: -100vh;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    top: -200px;
+  }
+
+  100% {
+    top: 55px;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.bottom_info {
+  display: grid;
+  grid-template-columns: 350px auto;
+  margin-top: 80px;
+  .section_title {
+    margin: 0;
+    font-size: 2.8rem;
+    justify-self: start;
+    &-bt {
+      justify-self: end;
+      margin-right: 350px-266.25px;
+    }
+  }
+  .email_contacto-bt {
+    justify-self: start;
+    margin-top: 23px;
+    font-size: 1.4rem;
+    margin-left:70px;
+
+  }
+  .contactos {
+    display: flex;
+    justify-content: start;
+    margin-top: 8px;
+    //padding-left:65px;
+    //margin-bottom: 180px;
+    .contact_card {
+      margin-left: 70px;
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin-bottom: 1rem;
+      .contact_card {
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+      //  grid-template-rows: 40px 18px 10px 60px;
+        align-items: center;
+
+        .cargo {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    .section_title {
+      font-size: 28px;
+      &-bt {
+        justify-self: start;
+        margin-right: 0;
+      }
+    }
+    .email_contacto-bt {
+      margin-top: 40px;
+      font-size: 20px;
+      margin-left: 0;
+    }
+  }
+}

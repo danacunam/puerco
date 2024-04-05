@@ -1,0 +1,38 @@
+.contact_card {
+  color: white;
+  text-align: left;
+  //margin-right: 50px;
+  display: grid;
+  grid-template-rows: auto 1.35em 50px auto;
+  grid-template-columns: 1fr;
+  //width:230px;
+  .nombre,.ubicacion {
+ //  font-size:1.4rem;
+  font-size:calc(1.54vw);
+    letter-spacing: 0.8px;
+  }
+ .email{
+  letter-spacing: 0.8px;
+ }
+  .cargo {
+    font-size: 1rem;
+    margin-top:7px;
+  }
+  @media screen and (max-width: 800px) {
+  grid-template-rows: 40px 1.3em auto auto;
+
+    width:auto;
+    .nombre,.ubicacion {
+      font-size:20px;    
+    }
+    .email{
+      line-height:1.2;
+      text-decoration: none;
+      font-size:20px
+     }
+     .cargo{
+      margin-bottom:20px;
+      font-size:14px;
+     }
+  }
+}

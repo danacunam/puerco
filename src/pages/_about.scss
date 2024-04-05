@@ -1,0 +1,125 @@
+.about {
+  &_top {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    // min-height: 100vh;
+    .info {
+      font-size: 1.6em;
+      padding: 0 10vw;
+      margin: 0;
+      &_mobile {
+        display: none;
+      }
+    }
+    .logo_animated {
+      max-width: 100vw;
+      position: absolute;
+      top: 55vh;
+      z-index: -1;
+    }
+  }
+  &_mid {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .section_title {
+      margin-left: 8.7rem;
+      margin-top: 0;
+      margin-bottom: 4rem;
+    }
+    .about_directors {
+      display: flex;
+      align-self: center;
+      overflow-x: scroll;
+      max-width: 380px * 3;
+      justify-content: space-between;
+      margin-top: 4.5rem;
+      overflow-y: hidden;
+      min-height: 100px;
+      min-width: 80vw;
+    }
+    .about_directors::-webkit-scrollbar {
+      // background-color: gray; /* Cambia el color del thumb (almohadilla) */
+      border-radius: 5px; /* Añade bordes redondeados al thumb (almohadilla) */
+      height: 10px;
+      display: none;
+    }
+    /*   .about_directors::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.1);
+      border-radius: 5px;
+  }
+  .about_directors::-webkit-scrollbar-track {
+    background: rgba(144, 136, 136, 0.272);
+    border-radius: 4px;
+} */
+  }
+  &_bottom {
+    //min-height: 90vh;
+    padding: 130px 10vw 100px 10vw; 
+    position: relative;
+    .arrow{
+      top: 60px;
+      right:10vw;
+
+    } 
+ 
+  }
+  @media screen and (max-width: 800px) {
+    &_top {
+      text-align: center;
+      padding-top: 120px;
+      min-height: auto;
+      margin-bottom: 0;
+      .info {
+        font-size: 1em;
+        padding: 0 20px;
+        &_desktop {
+          display: none;
+        }
+        &_mobile {
+          display: block;
+          text-align: left;
+        }
+      }
+    
+    }
+   
+    &_mid {
+      padding: 0 20px;
+      .about_directors {
+        align-self: start;
+        margin-top: 3rem;
+        width:100%;
+      }
+      .section_title {
+        display: none;
+      }
+    }
+    &_bottom {
+   // min-height: calc(100vh + 50px);
+    padding: 0 20px 50px 20px;
+      .arrow {
+        width: 25px;
+        right: 20px;
+        top:-20px;
+      }
+     
+      section.contactos {
+        margin-bottom: 0;
+        margin-top: 1rem;
+     /*    .contact_card {
+          margin-bottom: 1.5rem;
+          grid-template-rows: 40px 18px 10px 60px;
+          align-items: center;
+          .cargo {
+            font-size: 0.9em;
+          }
+        } */
+      }
+    }
+
+  }
+}
